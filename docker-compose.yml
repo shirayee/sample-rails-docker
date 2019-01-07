@@ -10,6 +10,7 @@ services:
       - .:/usr/src/sample-rails-docker
     links:
       - mysql
+    command: /bin/sh -c "rm -f tmp/pids/server.pid && rails server -b 0.0.0.0"
   mysql:
     image: mysql:5.7.24
     environment: # this project is sample project and development environment, so hard coding password. 
