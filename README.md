@@ -1,24 +1,25 @@
-# README
+# sample-rails-docker
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## usage
 
-Things you may want to cover:
+### build
 
-* Ruby version
+```
+$ docker-compose build
+```
 
-* System dependencies
+### start process
 
-* Configuration
+```
+$ docker-compose up -d
+# create db
+$ docker-compose run --rm app rake db:create
+# migration (if needed)
+$ docker-compose run --rm app rake db:migrate
+```
 
-* Database creation
+### stop process
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+```
+$ docker-compose down -v
+```
