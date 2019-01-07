@@ -1,0 +1,20 @@
+default: &default
+  adapter: mysql2
+  encoding: utf8
+  port: 3306
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  timeout: 5000
+  url: # this project is sample project and development environment, so hard coding password. 
+    mysql2://root:password@mysql:3306
+
+development:
+  <<: *default
+  database: sample_development
+
+test:
+  <<: *default
+  database: sample_test
+
+production:
+  <<: *default
+  database: sample
